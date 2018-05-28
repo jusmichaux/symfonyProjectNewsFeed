@@ -1,4 +1,5 @@
 module.exports = function(name) {
-   return `Welcome ${name} - welcome to NewsFeed !`;
+   return `NewsFeed  - Happy meal ${name}`;
 
 };
+

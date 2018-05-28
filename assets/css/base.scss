@@ -4,18 +4,29 @@ $secondBlue:#5E92F2;
 $thirdBlue:#7BA2EA;
 $darkBlue:#0D2249;
 $darkWhite:#D9D9D9;
+$whiteBase:white;
+$offsetWhiteBase:black;
 
+* {
+  -moz-box-sizing: border-box; box-sizing: border-box;
+  padding:0px;
+  margin:0px;
+}
 
+html {
+  height: 100%;
+}
 
 
 body{
   font-family: 'Lato', sans-serif;
+  min-height: 100%;
 }
 
 table, tbody, tr, td{
   margin:0px;
   padding:0px;
-  border-collapse: collapse;
+  //border-collapse: collapse;
 }
 
 
@@ -26,7 +37,7 @@ table, tbody, tr, td{
   padding:10px;
   border-radius:5px 5px 0 0;
   transition: all .2s ease-in-out;
-  box-shadow:inset 4px 4px 4px 2px $darkWhite;
+  box-shadow:inset 4px 4px 4px 2px $darkWhite, inset -4px 4px 4px 2px #D9D9D9;
 }
 
 .newsBillet{
@@ -36,12 +47,17 @@ table, tbody, tr, td{
   padding:10px;
   border-radius:0px 0px 0 0;
   transition: all .2s ease-in-out;
-  box-shadow:inset 0px 4px 4px 2px  $darkWhite;
+  box-shadow:inset 4px 4px 4px 2px  $darkWhite, inset -4px 4px 4px 2px #D9D9D9;
 }
 
 .newsBilletOver:hover{
   box-shadow:inset 2px 2px 2px 0px $darkWhite;
 }
+
+.newsBilletBottom:hover{
+  box-shadow:inset 2px 2px 2px 0px $darkWhite;
+}
+
 
 .newsBillet:hover{
   box-shadow:inset 2px 2px 2px 0px $darkWhite;
@@ -76,7 +92,7 @@ table, tbody, tr, td{
   font-size:23px;
 }
 .newsContent{
-  background: white;
+  background: $whiteBase;
   border-color:black;
   border-size:1px;
   border-radius:4px;
@@ -87,11 +103,13 @@ table, tbody, tr, td{
   transition: all .2s ease-in-out;
 }
 
+.newsContent:off{}
+
 .newsContent:hover{
   box-shadow: 0px 1.2px 1.4px 1.4px $firstBlue;
   // box-shadow: 0px 0.5px 0px 1.5px black;
   transform: scale(1.05);
-  background: white 20%;
+  background: $whiteBase 20%;
 
 }
 .newsDate{
@@ -112,6 +130,47 @@ table, tbody, tr, td{
   text-align:left;
   border-radius:3px;
   color:$darkBlue;
+}
+
+h1{
+  text-align:center;
+}
+
+.dateUpdate{
+  font-size:8px;
+  padding-left:2px;
+  text-align:right;
+  display:block;
+}
+
+.newsBilletBottom{
+  background-color:$white;
+  width:50%;
+  margin:auto;
+  padding:10px;
+  border-radius:0px 0px 5px 5px;
+  transition: all .2s ease-in-out;
+  box-shadow:inset 4px 4px 4px 2px $darkWhite, inset -4px 4px 4px 2px #D9D9D9;
+}
+
+.ovenBan{
+  width:50%;
+  max-width: 50rem;
+  padding-top: .5em;
+  padding-bottom: 1rem;
+  margin-bottom:4px;
+  text-align:center;
+  line-height:4px;
+  width:50%;
+  margin:auto;
+  padding:10px;
+  border-bottom: 1px dashed;
+
+}
+
+nav{
+  padding-bottom:30px;
+  padding-top:40px;
 }
 
 .newsRatingBand li{
@@ -151,3 +210,148 @@ table, tbody, tr, td{
   background-color:$darkBlue;
   height:9px;
 }
+
+$red:#ff6666;
+//$green:#99ff33;
+$green:$darkBlue;
+$orange:#ff9933;
+
+.cont{
+  background-color:black;
+  color:white;
+}
+.alertR{
+  font-family: 'Roboto' ,sans-serif;
+  padding-top: 8px;
+  padding-bottom: 4px;
+}
+
+
+.circle{
+  background-color: #663399;
+ /// background-color: $darkWhite;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #663399, 1.5em 0 0 2px #777, 3em 0 0 2px #777;
+  content: "";
+  display: block;
+  height: .5em;
+  left: 1em;
+  position: absolute;
+  top: -1.25em;
+  width: .5em;
+}
+
+.circle:hover{
+  background-color:#663399;
+  box-shadow: 0 0 0 2px #663399, 1.5em 0 0 2px $orange, 3em 0 0 2px $red;
+}
+.bigcont{
+  //border: solid #555;
+  border: solid $white;
+  border-width: 30px 3px 4px 4px;
+  border-radius: 3px 3px 2px 2px;
+  position: relative;
+}
+.dollcontent{
+  //color:darkgrey;
+  color:$darkWhite;
+}
+.dollar{
+  text-align: left;
+  padding-left: 4.2px;
+  margin-left:4px;
+ // color:lightgrey;
+
+  line-height: 1.6;
+  color:$darkBlue;
+}
+
+.contentO{
+  padding-top:5px;
+//  color:white;
+  color:$darkBlue;
+
+
+  margin-left:4px;
+}
+
+footer {
+  width:50%;
+  margin:auto;
+  bottom: 0; left: 0; right: 0;
+}
+
+/*
+	Ratings Stars
+	(with as little code as possible)
+*/
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+}
+.rating > span:hover,
+.rating > span:hover ~ span {
+  color: transparent;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  color: #663399 ;
+}
+
+
+
+
+.containerBN{
+
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 30px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.buttonNav{
+  margin-left:70px;
+  height:100px;
+  width:100px;
+  background-color:$firstBlue;
+  border-radius:50%;
+}
+
+.liNav{
+  font-size:25px;
+  background-color:white;
+  max-width:110px;
+  margin-left: 60px;
+  border-radius:3px;
+  text-align:center;
+  text-decoration:none;
+}
+
+.liNav ul{
+
+  list-style: none;
+}
+
+.liNav a{
+  color:$white;
+  text-decoration: none;
+}
+
+.liNav a:hover{
+  color:$thirdBlue;
+}
+
+.buttonNav:hover{
+  background-color:$darkBlue;
+}
+

@@ -3,20 +3,41 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet">
         {% block stylesheets %}	<link href="{{ asset('build/js/app.css')}}" rel="stylesheet">{% endblock %}
         {% block js %}	<script src="{{ asset('build/js/app.js')}}" ></script>{% endblock %}
+        <script>
+
+        </script>
     </head>
     <body>
+
+    <div class="containerBN">
+        <div class="buttonNav"></div>
+        <div class="liNav">
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </div>
+
     <div class="BanCent">
         <div class="circle"></div>
         <div class="circle Ban2"></div>
         <div class="circle Ban3"></div>
         <div class="circle Ban4"></div>
 
-
+        <nav>
+          <div class="ovenBan">
+            <span class="dateUpdate">
+          </span>
+            </div>
+        </nav>
 
 
 
@@ -24,6 +45,10 @@
             {% block body %}{% endblock %}
         {% block bodyMes %}{% endblock %}
         {% block javascripts %}{% endblock %}
+
+
     </div>
+
     </body>
+
 </html>
