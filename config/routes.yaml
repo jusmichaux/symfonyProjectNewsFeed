@@ -1,3 +1,9 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+
+# the "app_welcome_base" route name is not important yet
+# app_welcome:
+#     path: /welcome/number
+#    controller: App\Controller\WelcomeController::number

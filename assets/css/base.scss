@@ -1,0 +1,153 @@
+$white:#EDEDED;
+$firstBlue:#BDD2FA;
+$secondBlue:#5E92F2;
+$thirdBlue:#7BA2EA;
+$darkBlue:#0D2249;
+$darkWhite:#D9D9D9;
+
+
+
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+table, tbody, tr, td{
+  margin:0px;
+  padding:0px;
+  border-collapse: collapse;
+}
+
+
+.newsBilletOver{
+  background-color:$white;
+  width:50%;
+  margin:auto;
+  padding:10px;
+  border-radius:5px 5px 0 0;
+  transition: all .2s ease-in-out;
+  box-shadow:inset 4px 4px 4px 2px $darkWhite;
+}
+
+.newsBillet{
+  background-color:$white;
+  width:50%;
+  margin:auto;
+  padding:10px;
+  border-radius:0px 0px 0 0;
+  transition: all .2s ease-in-out;
+  box-shadow:inset 0px 4px 4px 2px  $darkWhite;
+}
+
+.newsBilletOver:hover{
+  box-shadow:inset 2px 2px 2px 0px $darkWhite;
+}
+
+.newsBillet:hover{
+  box-shadow:inset 2px 2px 2px 0px $darkWhite;
+}
+
+.newsController{
+
+  text-align:right;
+  padding:0px;
+  margin:0px;
+}
+
+.newsController li{
+
+  display:inline;
+  background-color:inherit;
+}
+
+.newsController li>a{
+  text-decoration:none;
+}
+
+.newsController li>a:hover{
+  color:$firstBlue;
+}
+
+.newsTitle{
+  background-color:inherith;
+  color:$thirdBlue;
+  padding:5px;
+  letter-spacing: 1.5px;
+  font-size:23px;
+}
+.newsContent{
+  background: white;
+  border-color:black;
+  border-size:1px;
+  border-radius:4px;
+  margin-top:1px;
+  font-size:13px;
+  padding:28px 2px 32px 9px;
+  text-align:center;
+  transition: all .2s ease-in-out;
+}
+
+.newsContent:hover{
+  box-shadow: 0px 1.2px 1.4px 1.4px $firstBlue;
+  // box-shadow: 0px 0.5px 0px 1.5px black;
+  transform: scale(1.05);
+  background: white 20%;
+
+}
+.newsDate{
+  text-align:right;
+  font-size:8px;
+  background-color:$white;
+}
+
+.newsHours{
+  float:right;
+  font-size:8px;
+  text-align:right;
+  background-color:$white;
+}
+.newsRating{
+  background-color:$white;
+  width:20%;
+  text-align:left;
+  border-radius:3px;
+  color:$darkBlue;
+}
+
+.newsRatingBand li{
+  text-decoration:none;
+
+  display:inline;
+  list-style-type:none;
+}
+
+.newsRatingBand a{
+  text-decoration:none;
+
+  padding:0;
+  margin:0;
+}
+
+.newsAuthor{
+  text-align:right;
+  background-color:$white;
+  font-style:italic;
+  font-size:9px;
+}
+
+.newsRatingBand i.material-icons {
+  font-size:14px;
+}
+
+.newsRatingBand i.material-icons:hover {
+  color:$firstBlue;
+}
+
+.newsBandOver{
+  position:absolute;
+  width:50.2%;
+  padding:0;
+  box-shadow:-10px 0px 0 0 $darkBlue;
+  background-color:$darkBlue;
+  height:9px;
+}

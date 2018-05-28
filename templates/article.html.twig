@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block bodyMes %}
+    <h1>   Your message is :    </h1>
+
+
+    <div class="container">
+        <div class="isVisible" style=" visibility: hidden;">{{ object.isVisible }}</div>
+        <!-- <img src="#"> -->
+        {% if object.isVisible == true %}
+            <div class="isVisible" style=" visibility: visible;">Visible:[{{ object.isVisible }}]</div>
+        {% endif %}
+
+
+
+        <span> Welcome </span>
+        <br />
+        <div class="content">
+            {{ object.Content() }}
+        </div>
+        <div class="line"></div>
+        <div class="followers">Followers:[{{ object.followers() }}]</div>
+        <div class="rating">Rating:[{{ object.rating() }}]</div>
+        <div class="date">{{ object.Date() }}</div>
+        <div class="author">{{ object.Author() }}</div>
+
+    </div>
+
+    <div class="container">
+
+        <!-- <img src="#"> -->
+
+        <span> About </span>
+        <br />
+        <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </div>
+        <div class="line"></div>
+        <div class="author">Elvetica</div>
+
+    </div>
+{% endblock %}

@@ -3,10 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
+        {% block stylesheets %}	<link href="{{ asset('build/js/app.css')}}" rel="stylesheet">{% endblock %}
+        {% block js %}	<script src="{{ asset('build/js/app.js')}}" ></script>{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+    <div class="BanCent">
+        <div class="circle"></div>
+        <div class="circle Ban2"></div>
+        <div class="circle Ban3"></div>
+        <div class="circle Ban4"></div>
+
+
+
+
+
+
+            {% block body %}{% endblock %}
+        {% block bodyMes %}{% endblock %}
         {% block javascripts %}{% endblock %}
+    </div>
     </body>
 </html>

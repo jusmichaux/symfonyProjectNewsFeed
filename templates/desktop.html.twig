@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+{% block bodyMes %}
+    {% for news in news %}
+        <!--
+             {#
+            <tr>
+                <div class="container">
+                    <div class="label{{ news.id }}"></div>
+
+            <td>{{ news.isVisible ? 'Yes' : 'No' }}</td>
+            <span> Welcome </span>
+            <br />
+            <div class="content">
+                <td>{{ news.content }}</td> </div>
+            <div class="line"></div>
+            <td>{{ news.time }}</td>
+            <td>{{ news.followers }}</td>
+            <td>{{ news.date }}</td>
+            <td>{{ news.rating }}</td>
+
+            <div class="author"><td>{{ news.author }}</td></div>
+            <td>{{ news.id }}</td>
+            </div>
+            </tr>
+            #}
+        -->
+
+        <table style="width:100%">
+        <tr>
+            <td>
+                {% if loop.first %}
+                <div class="newsBilletOver">
+                    {% else %}
+                    <div class="newsBillet">
+                    {% endif %}
+
+
+                    <div class="newsController">
+                        <ul>
+                            <li><a href=""><i class="material-icons">
+                                        keyboard_arrow_up
+                                    </i></a></li>
+                            <li><a href=""><i class="material-icons">
+                                        keyboard_arrow_down
+                                    </i></a></li>
+                            <li><a href=""><i class="material-icons">
+                                        close
+                                    </i></a></li>
+                        </ul>
+                    </div>
+                    <div class="newsTitle">TitleExample</div>
+                    <div class="newsContent">
+                        {{ news.content }}
+                    </div>
+                    <div class="newsDate">{{ news.date }}</div>
+                    <div class="newsHours">{{ news.time }}</div>
+                    <div class="newsRating">
+                        <div class="newsRatingBand">
+                            <a href="">
+                                <ul>
+                                    <li><i class="material-icons">
+                                            grade
+                                        </i></li>
+                                    <li><i class="material-icons">
+                                            grade
+                                        </i></li>
+                                    <li><i class="material-icons">
+                                            grade
+                                        </i></li>
+                                    <li><i class="material-icons">
+                                            grade
+                                        </i></li>
+                                    <li><i class="material-icons">
+                                            grade
+                                        </i></li>
+                                </ul>
+                            </a>
+                        </div>
+
+
+
+                    </div>
+                    <!-- ID COMES HERE newsId[id] -->
+                    <div class="newsI[{{ news.id }}]" style="visibility: hidden;"></div>
+                    <div class="newsAuthor">{{ news.author }}</div>
+                    <br />
+                        <!-- HIDE BandOver
+                                 <div class="newsBandOver"></div>
+                         -->
+                    </div>
+
+
+            </td>
+        </tr>
+
+
+    {% else %}
+        <tr>
+            <div class="alertR">
+            <td colspan="9">no records found</td>
+            </div>
+        </tr>
+    {% endfor %}
+
+
+
+
+
+{% endblock %}

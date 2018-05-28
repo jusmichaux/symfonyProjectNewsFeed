@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+*{
+background-color:#b3b3ff;
+color:#ccccff;
+}
+.container{
+border-radius:2px;
+padding:20px;
+width:500px;
+height:200px;
+margin-left:auto;
+margin-right:auto;
+background-color:#8080ff;
+box-shadow: -2px 0px #e6e6ff;
+}
+
+.container img{
+border-radius:9px;
+width:30px;
+height:30px;
+}
+
+.container span{
+background-color:inherit;
+font-size:19px;
+}
+
+.content{
+background-color:inherit;
+}
+
+.container:hover{
+background-color:#6666ff;
+box-shadow: 2px 0px #e6e6ff;
+}
+
+.container span:hover{
+background-color:#6666ff;
+}
+
+.line{
+position:fixed;
+bottom:-45px;
+width:100%;
+margin-top:8px;
+margin-bottom:4px;
+border-radius:2px;
+height:4px;
+position:relative;
+}
+
+
+.author{
+position:relative;
+background-color:inherit;
+text-align:right;
+font-style:bold;
+}
+
+{% endblock %}
