@@ -46,6 +46,12 @@ class Users
      */
     private $rating;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\News", inversedBy="handlersUser")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $articlesWritten;
+
     public function getId()
     {
         return $this->id;
@@ -119,6 +125,18 @@ class Users
     public function setRating(?int $rating): self
     {
         $this->rating = $rating;
+
+        return $this;
+    }
+
+    public function getArticlesWritten(): ?News
+    {
+        return $this->articlesWritten;
+    }
+
+    public function setArticlesWritten(?News $articlesWritten): self
+    {
+        $this->articlesWritten = $articlesWritten;
 
         return $this;
     }

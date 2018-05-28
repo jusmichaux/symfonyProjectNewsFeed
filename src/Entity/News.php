@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -50,6 +52,16 @@ class News
      * @ORM\Column(type="integer", nullable=true)
      */
     private $rating;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Users", mappedBy="articlesWritten")
+     */
+    private $handlersUser;
+
+    public function __construct()
+    {
+        $this->handlersUser = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -136,6 +148,37 @@ class News
     public function setRating(?int $rating): self
     {
         $this->rating = $rating;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Users[]
+     */
+    public function getHandlersUser(): Collection
+    {
+        return $this->handlersUser;
+    }
+
+    public function addHandlersUser(Users $handlersUser): self
+    {
+        if (!$this->handlersUser->contains($handlersUser)) {
+            $this->handlersUser[] = $handlersUser;
+            $handlersUser->setArticlesWritten($this);
+        }
+
+        return $this;
+    }
+
+    public function removeHandlersUser(Users $handlersUser): self
+    {
+        if ($this->handlersUser->contains($handlersUser)) {
+            $this->handlersUser->removeElement($handlersUser);
+            // set the owning side to null (unless already changed)
+            if ($handlersUser->getArticlesWritten() === $this) {
+                $handlersUser->setArticlesWritten(null);
+            }
+        }
 
         return $this;
     }
