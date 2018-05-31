@@ -25,7 +25,15 @@ class WelcomeController extends AbstractController
     }
 
     /**
-     * @Route("/welcome/desktop")
+     * @Route("/admin")
+     */
+    public function admin()
+    {
+        return new Response('<html><body>Admin page!</body></html>');
+    }
+
+    /**
+     * @Route("/welcome/desktop" , name="homepage")
      */
     public function desktop()
     {

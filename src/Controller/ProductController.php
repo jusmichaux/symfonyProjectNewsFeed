@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 use App\Entity\News;
+use App\Entity\Users;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,7 +21,7 @@ class ProductController extends Controller
         $news->setContent('Aloe Mora');
         $news->setAuthor('Harry Potter');
         $news->setDate("TEST");
-        $news->setRating(null);
+        $news->setNRating(null);
         $news->setFollowers(null);
         $news->setIsVisible(1);
         $news->setTime("TEST");
@@ -29,9 +30,28 @@ class ProductController extends Controller
         $entityManager->persist($news);
 
         // actually executes the queries (i.e. the INSERT query)
+        //$entityManager->flush();
+
+
+        // you can fetch the EntityManager via $this->getDoctrine()
+        // or you can add an argument to your action: index(EntityManagerInterface $entityManager)
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $user = new Users();
+        $user->setName('admin');
+        $user->setFollowers('Lolo');
+        $user->setPassword('admin');
+        $user->setPlainPassword('admin');
+        $user->setArticlesWritten($news);
+
+        // tell Doctrine you want to (eventually) save the Product (no queries yet)
+        $entityManager->persist($user);
+
+        // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
-        return new Response('Saved new news with id '.$news->getId());
+
+        return new Response('Saved new news with id '.$news->getId().'Saved new user with id '.$user->getId());
     }
 
     /**

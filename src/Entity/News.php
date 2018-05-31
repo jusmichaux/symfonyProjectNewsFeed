@@ -51,7 +51,7 @@ class News
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $rating;
+    private $Nrating;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Users", mappedBy="articlesWritten")
@@ -140,14 +140,14 @@ class News
         return $this;
     }
 
-    public function getRating(): ?int
+    public function getNrating(): ?int
     {
-        return $this->rating;
+        return $this->Nrating;
     }
 
-    public function setRating(?int $rating): self
+    public function setNrating(?int $Nrating): self
     {
-        $this->rating = $rating;
+        $this->rating = $Nrating;
 
         return $this;
     }

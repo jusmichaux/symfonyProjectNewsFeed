@@ -18,7 +18,7 @@ class NewsType extends AbstractType
             ->add('time')
             ->add('followers')
             ->add('isVisible')
-            ->add('rating')
+            ->add('nRating')
         ;
     }
 

@@ -2523,16 +2523,16 @@
         },
         {
             "name": "symfony/form",
-            "version": "v4.0.10",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
-                "reference": "64ae89967f0c37ce7c5b719c3179683c1846f0cc"
+                "reference": "95f8237303e1f7101fee0e72d6ba630a3e4c5178"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/64ae89967f0c37ce7c5b719c3179683c1846f0cc",
-                "reference": "64ae89967f0c37ce7c5b719c3179683c1846f0cc",
+                "url": "https://api.github.com/repos/symfony/form/zipball/95f8237303e1f7101fee0e72d6ba630a3e4c5178",
+                "reference": "95f8237303e1f7101fee0e72d6ba630a3e4c5178",
                 "shasum": ""
             },
             "require": {
@@ -2573,7 +2573,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -2600,7 +2600,7 @@
             ],
             "description": "Symfony Form Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-21T10:09:47+00:00"
+            "time": "2018-05-30T07:26:09+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -4299,7 +4299,7 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
