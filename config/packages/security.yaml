@@ -2,21 +2,28 @@ security:
 
     encoders:
           Symfony\Component\Security\Core\User\User: plaintext
-
-           # App\Entity\Users:
+          App\Entity\Users: plaintext
           #    algorithm: bcrypt
       # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-      in_memory:
+
+     chain_provider:
+                chain:
+                    providers: [in_memory, our_db_provider]
+
+     in_memory:
               memory:
                 users:
                   admin:
-                      password: cat
+                      password: cattt
                       roles: 'ROLE_ADMIN'
-      #our_db_provider:
-      #        entity:
-      #              class: App\Entity\Users
-      #              property: name
+    #
+    #
+
+     our_db_provider:
+              entity:
+                    class: App\Entity\Users
+                    property: name
                             # if you're using multiple entity managers
                             # manager_name: customer
       #  in_memory:
@@ -26,17 +33,32 @@ security:
       #                        password: kitten
       #                        roles: 'ROLE_ADMIN'
     firewalls:
-         dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-         main:
 
-            anonymous: ~
-            http_basic: ~
+
+        main:
+                    anonymous: ~
+
+        secured_area:
+
+                    pattern: ^/
+                    provider: our_db_provider
+                    http_basic:
+                        realm: 'Secured Demo Area'
+                        provider: in_memory
+                    form_login:
+                        login_path: login
+
+
+        dev:
+                    pattern: ^/(_(profiler|wdt)|css|images|js)/
+                    security: false
+
+
+
+
              #anonymous: ~
              #pattern:    ^/
              #http_basic: ~
-             #provider: our_db_provider
 
             # activate different ways to authenticate
 

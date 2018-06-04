@@ -133,6 +133,10 @@ class News
         return $this->isVisible;
     }
 
+    public function __toString() {
+        return $this->id.'';
+    }
+
     public function setIsVisible(?bool $isVisible): self
     {
         $this->isVisible = $isVisible;

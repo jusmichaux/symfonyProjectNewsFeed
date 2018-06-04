@@ -13,23 +13,21 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-
-
    let dt = new Date();
    let time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-
-
    $('.dateUpdate').html(time);
-
 }, 1000);
 
 
 $(document).ready(function() {
     $(".buttonNav").hover(function(){
-        $(this).toggleClass( "active" )
-            .next()
-            .stop( true, true )
-            .slideToggle();
+        $(this).css('background-color','$black')
+        /**toggleClass( "active" )
+         * .stop( true, true )
+         * .next()
+         .slideToggle();
+         * **/
+
     })
 });
 /**

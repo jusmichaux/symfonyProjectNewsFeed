@@ -34,7 +34,7 @@ class Users implements UserInterface, \Serializable
     private $age;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $followers;
 
@@ -46,7 +46,7 @@ class Users implements UserInterface, \Serializable
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\News", inversedBy="handlersUser")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $articlesWritten;
 
@@ -86,6 +86,7 @@ class Users implements UserInterface, \Serializable
     }
 
 
+
     public function getUsername(): ?string
     {
         return $this->name;
@@ -93,7 +94,7 @@ class Users implements UserInterface, \Serializable
 
     public function getRoles()
     {
-        return array('ROLE_USER');
+        return array('ROLE_ADMIN');
     }
 
     public function setName(?string $name): self
@@ -132,7 +133,7 @@ class Users implements UserInterface, \Serializable
         return $this->followers;
     }
 
-    public function setFollowers(string $followers): self
+    public function setFollowers(?string $followers): self
     {
         $this->followers = $followers;
 
