@@ -7,3 +7,9 @@
 # app_welcome:
 #     path: /welcome/number
 #    controller: App\Controller\WelcomeController::number
+logout:
+    path: /logout
+#    controller: App\Controller\SecurityController::logout
+
+login-check:
+    path: /login_check

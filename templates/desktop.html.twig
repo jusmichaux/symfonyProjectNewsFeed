@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block bodyMes %}
+    {% if is_granted('ROLE_ADMIN') %}
+       LOG en tant qu'admin
+    {% endif %}
+    {% if is_granted('ROLE_USER') %}
+        LOG en tant qu'user
+    {% endif %}
     {% for news in news %}
         <!--
              {#

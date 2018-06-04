@@ -1,53 +1,52 @@
 security:
-
     encoders:
-          Symfony\Component\Security\Core\User\User: plaintext
-          App\Entity\Users: plaintext
-          #    algorithm: bcrypt
+          Symfony\Component\Security\Core\User\User: bcrypt
+      #   App\Entity\Users: bcrypt
       # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
 
-     chain_provider:
-                chain:
-                    providers: [in_memory, our_db_provider]
-
+#     chain_provider:
+#                chain:
+#                    providers: [in_memory, our_db_provider]
+#
+#     our_db_provider:
+#              entity:
+#                    class: App\Entity\Users
+#                    property: name
+#                            # if you're using multiple entity managers
+#                            # manager_name: customer
      in_memory:
               memory:
                 users:
-                  admin:
-                      password: cattt
-                      roles: 'ROLE_ADMIN'
-    #
-    #
+                  cat:
+                      password: kitten
+                      roles: ROLE_ADMIN
 
-     our_db_provider:
-              entity:
-                    class: App\Entity\Users
-                    property: name
-                            # if you're using multiple entity managers
-                            # manager_name: customer
-      #  in_memory:
-      #          memory:
-      #                users:
-      #                    admin:
-      #                        password: kitten
-      #                        roles: 'ROLE_ADMIN'
     firewalls:
-
-
         main:
                     anonymous: ~
 
-        secured_area:
 
+
+        secured_area:
                     pattern: ^/
-                    provider: our_db_provider
+#                    provider: our_db_provider
+#                    provider: in_memory
                     http_basic:
-                        realm: 'Secured Demo Area'
-                        provider: in_memory
+                       realm: 'Secured Demo Area'
+                       provider: in_memory
                     form_login:
                         login_path: login
+                        check_path: /login
+                        always_use_default_target_path: true
+                        default_target_path: homepage
+                        use_referer: true
 
+#                    logout:
+#                        path: /logout
+##                        target: /
+##                        invalidate_session: true
+#                    anonymous: false
 
         dev:
                     pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -56,21 +55,21 @@ security:
 
 
 
-             #anonymous: ~
-             #pattern:    ^/
-             #http_basic: ~
+     #anonymous: ~
+     #pattern:    ^/
+     #http_basic: ~
 
-            # activate different ways to authenticate
+    # activate different ways to authenticate
 
-            # http_basic: true
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+    # http_basic: true
+    # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
-            # form_login: true
-            # https://symfony.com/doc/current/security/form_login_setup.html
+    # form_login: true
+    # https://symfony.com/doc/current/security/form_login_setup.html
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
-     #   - { path: ^/profile, roles: ROLE_USER }
+         - { path: ^/profile, roles: ROLE_USER }
 
