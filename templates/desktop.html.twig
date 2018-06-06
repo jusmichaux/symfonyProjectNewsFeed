@@ -1,11 +1,5 @@
 {% extends 'base.html.twig' %}
 {% block bodyMes %}
-    {% if is_granted('ROLE_ADMIN') %}
-       LOG en tant qu'admin
-    {% endif %}
-    {% if is_granted('ROLE_USER') %}
-        LOG en tant qu'user
-    {% endif %}
     {% for news in news %}
         <!--
              {#
@@ -119,8 +113,8 @@
                                 <div class="circle"></div>
                                 <div class="contO">
                                     <div class="dollar">
-                                        <span class="content"><span class="dollcontent">$ </span><span class="contentToFill">php bin/console</span></span>
-                                    <br /> </div><div class="dollar" style="text-align:right; padding-right: 5px;">
+                                        <span class="content"><span class="dollcontent">$ </span><span class="contentToFill">Symfony 4 project</span></span>
+                                    <br /> </div><div class="dollar" style="text-align:left; padding-right: 5px;">
                                         <span class="dollcontent" style="text-align:left;">$ </span><span class="contentToFill" >created by Justin Michaux</span>
 
                                     </div>

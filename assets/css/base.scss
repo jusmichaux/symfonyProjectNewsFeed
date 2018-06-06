@@ -9,8 +9,8 @@ $offsetWhiteBase:black;
 
 * {
   -moz-box-sizing: border-box; box-sizing: border-box;
-  padding:0px;
-  margin:0px;
+  padding:0;
+  margin:0;
 }
 
 html {
@@ -42,7 +42,7 @@ table, tbody, tr, td{
 
 .newsBillet{
   background-color:$white;
-  width:50%;
+  max-width:50%;
   margin:auto;
   padding:10px;
   border-radius:0px 0px 0 0;
@@ -85,7 +85,7 @@ table, tbody, tr, td{
 }
 
 .newsTitle{
-  background-color:inherith;
+  background-color:inherit;
   color:$thirdBlue;
   padding:5px;
   letter-spacing: 1.5px;
@@ -94,7 +94,6 @@ table, tbody, tr, td{
 .newsContent{
   background: $whiteBase;
   border-color:black;
-  border-size:1px;
   border-radius:4px;
   margin-top:1px;
   font-size:13px;
@@ -133,6 +132,7 @@ table, tbody, tr, td{
 
 h1{
   text-align:center;
+  padding-top:13px;
 }
 
 .dateUpdate{
@@ -155,12 +155,8 @@ h1{
 .ovenBan{
   width:50%;
   max-width: 50rem;
-  padding-top: .5em;
-  padding-bottom: 1rem;
-  margin-bottom:4px;
   text-align:center;
   line-height:4px;
-  width:50%;
   margin:auto;
   padding:10px;
   border-bottom: 1px dashed;
@@ -249,7 +245,7 @@ $orange:#ff9933;
   border: solid $white;
   border-width: 30px 3px 4px 4px;
   border-radius: 3px 3px 2px 2px;
-  position: relative;
+
 }
 .dollcontent{
   //color:darkgrey;
@@ -307,37 +303,42 @@ footer {
 }
 
 
-
-
 .containerBN{
-
+  left: 13%;
+  top: 7%;
   position: absolute;
-  margin-top: 50px;
-  margin-left: 30px;
   text-decoration: none;
   list-style: none;
+  transition: all .4s ease-in-out;
 }
 
+
 .buttonNav{
-  margin-left:70px;
+  transition: all .4s ease-in-out;
+  border:0;
   height:100px;
   width:100px;
   background-color:$firstBlue;
   border-radius:50%;
 }
 
+.minimised{
+  transform: scale(0.55);
+}
+
+
 .liNav{
   font-size:25px;
   background-color:white;
   max-width:110px;
-  margin-left: 60px;
   border-radius:3px;
   text-align:center;
   text-decoration:none;
+  transition: all .2s ease-in-out;
 }
 
 .liNav ul{
-
+  transition: all .2s ease-in-out;
   list-style: none;
 }
 
@@ -353,4 +354,176 @@ footer {
 .buttonNav:hover{
   background-color:$darkBlue;
 }
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+  .containerBN {
+    left: 15%;
+    top: 7%;
+  }
 
+  .buttonNav{
+    transition: all .4s ease-in-out;
+    height:100px;
+    width:100px;
+  }
+
+  .liNav{
+    font-size:15px;
+  }
+}
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .rating {
+    display:none;
+  }
+
+  .containerBN {
+    left: 13%;
+    top: 10.5%;
+  }
+
+  .buttonNav{
+    transition: all .4s ease-in-out;
+    height:50px;
+    width:50px;
+  }
+
+  .liNav{
+    font-size:15px;
+  }
+
+  .newsBillet {
+    width: 80%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+  .newsBilletOver {
+    width: 80%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+
+  .newsBilletBottom {
+    width: 80%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+
+  .alertR{
+    width: 80%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bigcont{
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0!important;
+  }
+
+  footer{
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+  h1{
+    font-size: 16px;
+  }
+  .rating {
+    display:none;
+  }
+
+  .containerBN {
+    left: 6%;
+    top: 9.5%;
+  }
+
+  .buttonNav{
+    transition: all .4s ease-in-out;
+    height:50px;
+    width:50px;
+  }
+
+  .liNav{
+    font-size:15px;
+  }
+
+  .newsBillet {
+    width: 95%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+  .newsBilletOver {
+    width: 95%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+
+  .newsBilletBottom {
+    width: 95%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+
+  .alertR{
+    width: 95%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bigcont{
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0!important;
+  }
+
+  footer{
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  .newsBillet {
+    width: 90%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+  .newsBilletOver {
+    width: 90%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+
+  .newsBilletBottom {
+    width: 90%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+
+  .alertR{
+    width: 90%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bigcont{
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0!important;
+  }
+
+  footer{
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    max-width: 100%;
+  }
+
+}

@@ -2,29 +2,34 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}NewsFeed{% endblock %}</title>
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet">
         {% block stylesheets %}	<link href="{{ asset('build/js/app.css')}}" rel="stylesheet">{% endblock %}
         {% block js %}	<script src="{{ asset('build/js/app.js')}}" ></script>{% endblock %}
+
         <script>
+
+            $(document).ready(function(){
+                console.log("Script working properly");
+            });
 
         </script>
     </head>
     <body>
 
-    {#<div class="containerBN">#}
-        {#<div class="buttonNav"></div>#}
-        {#<div class="liNav active">#}
-            {#<ul>#}
-                {#<li><a href="#home">Accueil</a></li>#}
-                {#<li><a href="#news">News</a></li>#}
-                {#<li><a href="#contact">Contact</a></li>#}
-                {#<li><a href="#about">About</a></li>#}
-            {#</ul>#}
-        {#</div>#}
-    {#</div>#}
+    <div class="containerBN"  >
+        <div class="buttonNav" ></div>
+        <div class="liNav">
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </div>
 
     <div class="BanCent">
         <div class="circle"></div>

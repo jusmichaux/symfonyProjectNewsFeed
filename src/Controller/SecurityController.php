@@ -6,7 +6,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use Symfony\Component\HttpFoundation\Response;
 
 class SecurityController extends Controller
 {
@@ -40,15 +39,5 @@ class SecurityController extends Controller
         return $this->render('security/index.html.twig', [
             'controller_name' => 'SecurityController',
         ]);
-    }
-
-    /**
-     * @Route("/logout", name="logout")
-     */
-    public function logout()
-    {
-
-        return new Response('<html><body>LogOut success page!</body></html>');
-
     }
 }
